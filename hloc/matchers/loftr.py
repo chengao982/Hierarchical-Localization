@@ -30,10 +30,12 @@ class LoFTR(BaseModel):
         cfg = default_cfg
         cfg['match_coarse']['thr'] = conf['match_threshold']
         # self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
-        self.net = LoFTR_(pretrained=None, config=cfg)
-        pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu)
-        self.net.load_state_dict(pretrained_dict['state_dict'])
-        self.net.eval()
+        try:
+            self.net = LoFTR_(pretrained=None, config=cfg)
+        except ValueError:
+            pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu)
+            self.net.load_state_dict(pretrained_dict['state_dict'])
+            self.net.eval()
 
     def _forward(self, data):
         # For consistency with hloc pairs, we refine kpts in image0!
