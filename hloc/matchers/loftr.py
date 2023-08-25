@@ -2,9 +2,18 @@ import torch
 import warnings
 from kornia.feature.loftr.loftr import default_cfg
 from kornia.feature import LoFTR as LoFTR_
+from kornia.utils.helpers import map_location_to_cpu
+
 
 from ..utils.base_model import BaseModel
 
+from typing import Dict
+
+urls: Dict[str, str] = {}
+urls["loftr_33_0.4"] = "http://gdirect.cc/d/H4J0q&type=1"
+urls["loftr_33_0.4_hc"] = "http://gdirect.cc/d/4czYF&type=1"
+urls["loftr_25_0.5"] = "http://gdirect.cc/d/axKno&type=1"
+urls["loftr_25_0.5_hc"] = "http://gdirect.cc/d/lSanx&type=1"
 
 class LoFTR(BaseModel):
     default_conf = {
@@ -20,7 +29,11 @@ class LoFTR(BaseModel):
     def _init(self, conf):
         cfg = default_cfg
         cfg['match_coarse']['thr'] = conf['match_threshold']
-        self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
+        # self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
+        self.net = LoFTR_(pretrained=None, config=cfg)
+        pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu)
+        self.net.load_state_dict(pretrained_dict['state_dict'])
+        self.net.eval()
 
     def _forward(self, data):
         # For consistency with hloc pairs, we refine kpts in image0!

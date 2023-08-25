@@ -37,6 +37,67 @@ from .utils.io import list_h5_names
 #      images, export_dir=outputs, features_ref=features, max_kps=None)
 
 confs = {
+    # loftr, max_dur=33, min_overlap=0.4, no height compensation
+    'loftr_33_0.4': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_33_0.4'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
+    # loftr, max_dur=33, min_overlap=0.4, height compensation
+    'loftr_33_0.4_hc': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_33_0.4_hc'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
+    # loftr, max_dur=25, min_overlap=0.5, no height compensation
+    'loftr_25_0.5': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_25_0.5'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
+    # loftr, max_dur=25, min_overlap=0.5, height compensation
+    'loftr_25_0.5_hc': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_25_0.5_hc'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
+
     # Best quality but loads of points. Only use for small scenes
     'loftr': {
         'output': 'matches-loftr',
