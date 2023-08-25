@@ -31,7 +31,7 @@ class LoFTR(BaseModel):
         cfg['match_coarse']['thr'] = conf['match_threshold']
         # self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
         try:
-            self.net = LoFTR_(pretrained=None, config=cfg)
+            self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
         except ValueError:
             pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu)
             self.net.load_state_dict(pretrained_dict['state_dict'])
