@@ -42,7 +42,7 @@ class LoFTR(BaseModel):
             self.net = LoFTR_(pretrained=conf['weights'], config=cfg)
         except ValueError:
             self.net = LoFTR_(pretrained=None, config=cfg)
-            pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu)
+            pretrained_dict = torch.hub.load_state_dict_from_url(urls[conf['weights']], map_location=map_location_to_cpu, file_name=conf['weights']+'.ckpt')
             self.net.load_state_dict(pretrained_dict['state_dict'])
             self.net.eval()
 
