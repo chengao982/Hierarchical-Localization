@@ -10,12 +10,18 @@ from ..utils.base_model import BaseModel
 from typing import Dict
 
 urls: Dict[str, str] = {}
-urls["loftr_33_0.4"] = "http://gdirect.cc/d/H4J0q&type=1"
-urls["loftr_33_0.4_hc"] = "http://gdirect.cc/d/4czYF&type=1"
-urls["loftr_25_0.5"] = "http://gdirect.cc/d/axKno&type=1"
-urls["loftr_25_0.5_hc"] = "http://gdirect.cc/d/lSanx&type=1"
-urls["loftr_23_0.5"] = "http://gdirect.cc/d/nxlHG&type=1"
-urls["loftr_23_0.5_hc"] = "http://gdirect.cc/d/sOnhz&type=1"
+# urls["loftr_33_0.4"] = "http://gdirect.cc/d/H4J0q&type=1"
+# urls["loftr_33_0.4_hc"] = "http://gdirect.cc/d/4czYF&type=1"
+# urls["loftr_25_0.5"] = "http://gdirect.cc/d/axKno&type=1"
+# urls["loftr_25_0.5_hc"] = "http://gdirect.cc/d/lSanx&type=1"
+# urls["loftr_23_0.5"] = "http://gdirect.cc/d/nxlHG&type=1"
+# urls["loftr_23_0.5_hc"] = "http://gdirect.cc/d/sOnhz&type=1"
+urls["loftr_33_0.4"] = "https://polybox.ethz.ch/index.php/s/syL4s9nMJwzWyiR/download"
+urls["loftr_33_0.4_hc"] = "https://polybox.ethz.ch/index.php/s/WG26oZXio0jEglA/download"
+urls["loftr_25_0.5"] = "https://polybox.ethz.ch/index.php/s/P13MBMZMuy2q960/download"
+urls["loftr_25_0.5_hc"] = "https://polybox.ethz.ch/index.php/s/qWLBoGoLPXzTtKi/download"
+urls["loftr_23_0.5"] = "https://polybox.ethz.ch/index.php/s/4VVcO0oAXvz8bdo/download"
+urls["loftr_23_0.5_hc"] = "https://polybox.ethz.ch/index.php/s/agCM5fW4FP4dKE6/download"
 
 class LoFTR(BaseModel):
     default_conf = {
