@@ -14,6 +14,8 @@ urls["loftr_33_0.4"] = "http://gdirect.cc/d/H4J0q&type=1"
 urls["loftr_33_0.4_hc"] = "http://gdirect.cc/d/4czYF&type=1"
 urls["loftr_25_0.5"] = "http://gdirect.cc/d/axKno&type=1"
 urls["loftr_25_0.5_hc"] = "http://gdirect.cc/d/lSanx&type=1"
+urls["loftr_23_0.5"] = "http://gdirect.cc/d/nxlHG&type=1"
+urls["loftr_23_0.5_hc"] = "http://gdirect.cc/d/sOnhz&type=1"
 
 class LoFTR(BaseModel):
     default_conf = {

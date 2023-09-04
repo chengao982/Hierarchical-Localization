@@ -97,6 +97,36 @@ confs = {
         'max_error': 1,  # max error for assigned keypoints (in px)
         'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
     },
+    # loftr, max_dur=23, min_overlap=0.5, no height compensation
+    'loftr_23_0.5': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_23_0.5'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
+    # loftr, max_dur=23, min_overlap=0.5, height compensation
+    'loftr_23_0.5_hc': {
+        'output': 'matches-loftr',
+        'model': {
+            'name': 'loftr',
+            'weights': 'loftr_23_0.5_hc'
+        },
+        'preprocessing': {
+            'grayscale': True,
+            'resize_max': 1024,
+            'dfactor': 8
+        },
+        'max_error': 1,  # max error for assigned keypoints (in px)
+        'cell_size': 1,  # size of quantization patch (max 1 kp/patch)
+    },
 
     # Best quality but loads of points. Only use for small scenes
     'loftr': {
