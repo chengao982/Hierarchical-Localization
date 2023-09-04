@@ -21,7 +21,7 @@ urls["loftr_33_0.4_hc"] = "https://polybox.ethz.ch/index.php/s/WG26oZXio0jEglA/d
 urls["loftr_25_0.5"] = "https://polybox.ethz.ch/index.php/s/P13MBMZMuy2q960/download"
 urls["loftr_25_0.5_hc"] = "https://polybox.ethz.ch/index.php/s/qWLBoGoLPXzTtKi/download"
 urls["loftr_23_0.5"] = "https://polybox.ethz.ch/index.php/s/4VVcO0oAXvz8bdo/download"
-urls["loftr_23_0.5_hc"] = "https://polybox.ethz.ch/index.php/s/agCM5fW4FP4dKE6/download"
+urls["loftr_23_0.5_hc"] = "https://polybox.ethz.ch/index.php/s/jzGrkJyyj6g8hiM/download"
 
 class LoFTR(BaseModel):
     default_conf = {
